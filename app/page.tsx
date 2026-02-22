@@ -1,65 +1,52 @@
-import Image from "next/image";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import ProductTabs from "@/components/ProductTabs";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main>
+        <Hero />
+        <ProductTabs />
+        
+        {/* Trusted Section */}
+        <section className="py-16 bg-[#f9f9f9]">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-8 text-[#404040]">Trusted the world over</h2>
+            <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale">
+              <span className="text-2xl font-bold">FIGMA</span>
+              <span className="text-2xl font-bold">IMGUR</span>
+              <span className="text-2xl font-bold">PRIVACY</span>
+              <span className="text-2xl font-bold">BUFFER</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits */}
+        <section className="py-20 bg-white border-t border-gray-100">
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1">
+              <h2 className="text-3xl font-bold mb-6 text-[#404040]">Every step to online success</h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Register a domain name and create your online identity. Whether you want speed, simplicity, space, or super-power, we’ve got you covered.
+              </p>
+              <ul className="space-y-4 font-medium text-[#404040]">
+                <li className="flex items-center gap-2">✓ Domain transfers are free and easy</li>
+                <li className="flex items-center gap-2">✓ 24/7 Knowledgeable Support</li>
+                <li className="flex items-center gap-2">✓ Privacy & security included</li>
+              </ul>
+            </div>
+            <div className="order-1 md:order-2 bg-[#f3f3f3] rounded-2xl h-80 flex items-center justify-center text-gray-400 font-bold">
+              ILLUSTRATION_PLACEHOLDER
+            </div>
+          </div>
+        </section>
       </main>
+      
+      <footer className="bg-[#404040] text-white py-12 text-center text-sm">
+        <p>&copy; 2026 Namecheap Clone Project. Not affiliated with namecheap.com.</p>
+      </footer>
     </div>
   );
 }
